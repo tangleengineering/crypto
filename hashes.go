@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-package sha3
+package keccak
 
 // This file provides functions for creating instances of the SHA-3
 // and SHAKE hash functions, as well as utility functions for hashing
@@ -15,12 +15,12 @@ import (
 // New224 creates a new SHA3-224 hash.
 // Its generic security strength is 224 bits against preimage attacks,
 // and 112 bits against collision attacks.
-func New224() hash.Hash { return &state{rate: 144, outputLen: 28, dsbyte: 0x06} }
+func New224() hash.Hash { return &state{rate: 144, outputLen: 28, dsbyte: 0x01} }
 
 // New256 creates a new SHA3-256 hash.
 // Its generic security strength is 256 bits against preimage attacks,
 // and 128 bits against collision attacks.
-func New256() hash.Hash { return &state{rate: 136, outputLen: 32, dsbyte: 0x06} }
+func New256() hash.Hash { return &state{rate: 136, outputLen: 32, dsbyte: 0x01} }
 
 // New384 creates a new SHA3-384 hash.
 // Its generic security strength is 384 bits against preimage attacks,
@@ -30,7 +30,7 @@ func New384() hash.Hash { return &state{rate: 104, outputLen: 48, dsbyte: 0x01} 
 // New512 creates a new SHA3-512 hash.
 // Its generic security strength is 512 bits against preimage attacks,
 // and 256 bits against collision attacks.
-func New512() hash.Hash { return &state{rate: 72, outputLen: 64, dsbyte: 0x06} }
+func New512() hash.Hash { return &state{rate: 72, outputLen: 64, dsbyte: 0x01} }
 
 // Sum224 returns the SHA3-224 digest of the data.
 func Sum224(data []byte) (digest [28]byte) {
