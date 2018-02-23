@@ -25,7 +25,7 @@ func New256() hash.Hash { return &state{rate: 136, outputLen: 32, dsbyte: 0x06} 
 // New384 creates a new SHA3-384 hash.
 // Its generic security strength is 384 bits against preimage attacks,
 // and 192 bits against collision attacks.
-func New384() hash.Hash { return &state{rate: 104, outputLen: 48, dsbyte: 0x06} }
+func New384() hash.Hash { return &state{rate: 104, outputLen: 48, dsbyte: 0x01} }
 
 // New512 creates a new SHA3-512 hash.
 // Its generic security strength is 512 bits against preimage attacks,
